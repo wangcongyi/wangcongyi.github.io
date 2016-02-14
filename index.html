@@ -39,7 +39,7 @@
             width: 140px;
             height: 290px;
             border-radius: 70px;
-            float: left;
+            float: right;
             margin-left: 30px;
             position: relative;
             transition: all ease 0.3s;
@@ -811,8 +811,13 @@
     </style>
 </head>
 <body>
-<p>Hello guys~~~~My name is wangcongyi</p>
-<p>welcome   <span style="color: darkred">to be continued</span></p>
+<div class="wrapper">
+    <h3>Hi there! I am</h3>
+    <h1>Wang cong yi</h1>
+    <span>i love &nbsp;</span>
+    <span class="text"></span>
+    <span class="cursor">|</span>
+</div>
 <div class="container">
     <div class="bill">
         <div class="lights">
@@ -881,5 +886,47 @@
         </div>
     </div>
 </div>
+<script>
+    var message = {
+        message: [
+            'web development;',
+            'javascript,react,nodejs...',
+            'All the new about web'
+        ],
+        counterS: 0,
+        counterL: 0,
+        deleteS: false,
+
+        init: function () {
+            this.cacheElem();
+            this.type();
+        },
+        cacheElem: function () {
+            this.text = document.querySelector('.text');
+        },
+        type: function () {
+            var message = this.message[this.counterS],
+                    self = this,
+                    speed = 0;
+            message = !this.deleteS ? message.slice(0, ++this.counterL) : message.slice(0, --this.counterL);
+            if (this.message[this.counterS] != message && !this.deleteS) {
+                this.text.textContent = message;
+                speed = 90;
+            } else {
+                this.deleteS = true;
+                speed = this.message[this.counterS] == message ? 1000 : 40;
+                this.text.textContent = message;
+                if (message == '') {
+                    this.deleteS = false;
+                    this.counterS = this.counterS < this.message.length - 1 ? this.counterS + 1 : 0;
+                }
+            }
+            setTimeout(function () {
+                self.type();
+            }, speed)
+        }
+    };
+    message.init();
+</script>
 </body>
 </html>
