@@ -5,7 +5,7 @@ test for blog
 
 
 ##2016-3-21
-gtihub use https but gaodeMap use http  so I can't use map at github.here is my   
+gtihub use https but gaodeMap use http  so I can't use map at github.here is my blog  
 >
 var map = new AMap.Map('container',{
         zoom: 10,
