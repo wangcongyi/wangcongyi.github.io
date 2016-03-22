@@ -16,5 +16,4 @@ var map = new AMap.Map('container',{
         position: [113.949,22.56],
         map:map
     });
-=======
->>>>>>> parent of 26ddfa1... bad map
+
