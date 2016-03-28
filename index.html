@@ -19,12 +19,7 @@
             padding-top: 70px;
             transition: all ease 0.3s;
         }
-         #map{
-             position: absolute;
-             width: 400px;
-             height: 400px;
-             margin-top: 30px;
-         }
+        
         h6 {
             color: #BDBDBD;
             margin-bottom: 30px
@@ -835,7 +830,6 @@
     <span class="text"></span>
     <span class="cursor">|</span>
 </div>
-<div id="map"></div>
 <div class="container">
     <div class="bill">
         <div class="lights">
@@ -1176,17 +1170,6 @@
         draw();
         requestAnimationFrame(loop);
     })();
-</script>
-<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=4d88304039b581e0e3ea914539b5d9e6"></script>
-<script>
-    var map = new AMap.Map('map',{
-        zoom:10,
-        center:[116.39,39.9]
-    });
-    var marker = new AMap.Maker({
-        position:[116.39,39.9],
-        map:map
-    })
 </script>
 
 </body>
