@@ -19,7 +19,7 @@
             padding-top: 70px;
             transition: all ease 0.3s;
         }
-        
+
         h6 {
             color: #BDBDBD;
             margin-bottom: 30px
@@ -814,10 +814,137 @@
         .wrapper {
             margin: 20px 0 0 50px;
         }
-        canvas{
+
+        canvas {
             position: absolute;
             margin-left: 30%;
             margin-top: 8%;
+        }
+        .card {
+            position: relative;
+            top: 10%;
+            left: 20%;
+            transform: translate(-80%, -10%);
+            width: 300px;
+            height: 450px;
+            background: #ff4b1f;
+        }
+
+        .live-status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+            border-radius: 50%;
+            background: #66ff00;
+            cursor: pointer;
+            z-index: 2;
+            box-sizing: border-box;
+            animation: glow 1s ease-in infinite;
+        }
+
+        .photo {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: url("yitachi.png");
+        }
+
+        .photo span {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 0, 0, .6);
+            color: #ffffff;
+            font-size: 4rem;
+            line-height: 300px;
+            text-align: center;
+            box-sizing: border-box;
+            opacity: 0;
+            cursor: pointer;
+            transition: opacity .2s ease-in;
+        }
+
+        .photo:hover > span {
+            opacity: 1;
+        }
+
+        .bot-wrap button {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #f46b45, #eea849);
+            padding: .5rem 2rem;
+            border: 2px solid #ffffff;
+            border-radius: 20px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .bot-wrap button:hover:before {
+            left: 110%;
+            transition: .3s;
+        }
+
+        .bot-wrap button:before {
+            content: '';
+            background: rgba(255, 255, 255, .3);
+            height: 100%;
+            width: 65px;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            transform: skew(-45deg);
+            transition: 0s;
+        }
+
+        .bot-wrap .stats {
+            color: #fff;
+            clear: both;
+        }
+
+        .bot-wrap .stats .stats-wrap {
+            position: relative;
+            float: left;
+            width: 33.3333%;
+            text-align: center;
+            text-transform: uppercase;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: background 0.2s ease-in;
+        }
+
+        .bot-wrap .stats .stats-wrap:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .bot-wrap .stats .stats-wrap:nth-child(2) {
+            border-left: solid 1px white;
+            border-right: solid 1px white;
+        }
+
+        .bot-wrap .stats .stats-wrap .total {
+            position: relative;
+            font-size: 2rem;
+            margin-top: 1rem;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 4px 1px #66ff00;
+            }
+            50% {
+                box-shadow: 0 0 4px 1px rgba(102, 255, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 4px 1px #66ff00;
+            }
         }
     </style>
 </head>
@@ -898,6 +1025,32 @@
         </div>
     </div>
 </div>
+<div class="card">
+    <div class="live-status"></div>
+    <div class="photo">
+        <span>Wang</span>
+    </div>
+    <div class="bot-wrap">
+        <button>Hello</button>
+        <div class="stats">
+            <div class="stats-wrap">
+                <h2>First</h2>
+
+                <div id="number1" class="total">47</div>
+            </div>
+            <div class="stats-wrap">
+                <h2>Second</h2>
+
+                <div id="number2" class="total">36</div>
+            </div>
+            <div class="stats-wrap">
+                <h2>Third</h2>
+
+                <div id="number3" class="total">16</div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     var message = {
         message: [
@@ -943,7 +1096,7 @@
     message.init();
 
 
-    var   canvas = document.querySelector("canvas"),
+    var canvas = document.querySelector("canvas"),
             ctx = canvas.getContext("2d");
 
     var w = canvas.width = 400,
@@ -957,56 +1110,6 @@
     var numParts = 275,
             tabParts = [];
 
-    function catchLetter(rawValue) {
-        var letter = {Model: "N", Color: "#fff"};
-        switch (rawValue) {
-            case 0:
-                letter.Model = "↟ A";
-                letter.Color = "#cf5";
-                break;
-            case 1:
-                letter.Model = "↗ B";
-                letter.Color = "#bf6";
-                break;
-            case 2:
-                letter.Model = "→ C";
-                letter.Color = "#af7";
-                break;
-            case 3:
-                letter.Model = "↘ D";
-                letter.Color = "#9f8";
-                break;
-            case 4:
-                letter.Model = "↡ E";
-                letter.Color = "#8f9";
-                break;
-            case 5:
-                letter.Model = "↙ F";
-                letter.Color = "#7fa";
-                break;
-            case 6:
-                letter.Model = "← G";
-                letter.Color = "#6fb";
-                break;
-            case 7:
-                letter.Model = "↖ H";
-                letter.Color = "#5fc";
-                break;
-            case 8:
-                letter.Model = "↑ I";
-                letter.Color = "#4fd";
-                break;
-            case 9:
-                letter.Model = "↟ J";
-                letter.Color = "#3fe";
-                break;
-            case 10:
-                letter.Model = "• K";
-                letter.Color = "#2ff";
-                break;
-        }
-        return letter;
-    }
 
     function catchSymbol(rawValue) {
         var letter = {Model: "N", Color: "#fff"};
@@ -1063,41 +1166,27 @@
         return letter;
     }
 
-    function particles() {
+    function Particles() {
         this.x = 0;
         this.y = 0;
-        this.r = Math.random()*radius;
+        this.r = Math.random() * radius;
         this.v = Math.random();
-        this.color = "rgba(155,250,250,"+Math.random()+")";
+        this.color = "rgba(155,250,250," + Math.random() + ")";
     }
 
-    for(var i=0; i<numParts; i++)
-    {
-        tabParts.push(new particles());
+    for (var i = 0; i < numParts; i++) {
+        tabParts.push(new Particles());
     }
 
-    var grd=ctx.createRadialGradient(w/2,h/2,500,w/2,h/2,150);
-    grd.addColorStop(0,"#000");
-    grd.addColorStop(1,"#024"); // # 246
+    var grd = ctx.createRadialGradient(w / 2, h / 2, 500, w / 2, h / 2, 150);
+    grd.addColorStop(0, "#000");
+    grd.addColorStop(1, "#024"); // # 246
 
     function draw() {
         ctx.save();
         ctx.fillStyle = grd;
         ctx.fillRect(0, 0, w, h);
 
-
-        for (var i = 1; i < 8; i++) {
-            for (var j = 1; j < 8; j++) {
-
-
-                ctx.font = "7px Arial";
-                ctx.fillStyle = catchLetter(Math.abs(Math.round((Math.cos(timer + j * i) * 10)))).Color;
-                ctx.textAlign = "center";
-                ctx.textBaseline = "middle";
-                ctx.strokeStyle = '#333';
-                ctx.lineWidth = 1;
-            }
-        }
 
         ctx.beginPath();
         ctx.fillStyle = grd;
@@ -1129,18 +1218,7 @@
             ctx.closePath();
         }
 
-        for (var i = 0; i < 2; i++) {
-            ctx.beginPath();
-            ctx.fillStyle = "rgba(155,150,250,0.2)";
-            // ctx.scale(1+Math.cos(timer)/30, 1+Math.sin(timer)/30);
-            ctx.arc(w / 2, h / 2, 120 - i * 30, 0, 2 * Math.PI, false);
-            ctx.strokeStyle = catchLetter(Math.abs(Math.round((Math.cos(timer + j * i) * 10)))).Color;
-            ctx.lineWidth = 0.055;
-            ctx.stroke();
-            ctx.closePath();
-        }
 
-// Particles
         for (var i = 0; i < numParts; i++) {
             ctx.beginPath();
             ctx.globalCompositeOperation = "source-over";
@@ -1166,12 +1244,38 @@
         ctx.restore();
     }
 
-    (function loop(){
+    (function loop() {
         draw();
         requestAnimationFrame(loop);
     })();
 </script>
+<script src="jquery-2.2.1.min.js"></script>
+<script>
+    $.fn.counter = function (ops) {
+        var settings = $.extend({
+            start: 0,
+            end: 100,
+            easing: 'swing',
+            duration: 400,
+            complete: ''
+        }, ops);
+        var $this =$(this);
+        console.log($({count:0}));
+        $({count:settings.start}).animate({count:settings.end},{
+            duration:settings.duration,
+            easing:settings.easing,
+            step:function(){
+                var m = Math.ceil(this.count);
+                $this.text(m)
+            },
+            complete:settings.complete
+        })
+    };
 
+    $('#number1').counter({end: 100,duration: 3000});
+    $('#number2').counter({end: 1000,duration: 3000});
+    $('#number3').counter({end: 10000,duration: 3000});
+</script>
 </body>
 </html>
 
