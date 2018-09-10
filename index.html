@@ -175,12 +175,9 @@
     particles = []
   }
   var draw = e => {
-    console.log(drawingMode)
     if (!drawingMode) return
-    console.log(e)
     particles.forEach(p => {
     })
-
   }
 
   canvas.addEventListener('mousedown', activateDraw)
@@ -191,9 +188,15 @@
   })
   canvas.addEventListener('mouseup', disableDraw)
 
-  canvas.addEventListener('touchstart', e => activateDraw)
-  canvas.addEventListener('touchmove', e => draw)
-  canvas.addEventListener('touchend', e => disableDraw)
+  canvas.addEventListener('touchstart', activateDraw)
+
+  canvas.addEventListener('touchmove', e => {
+    mousePos.x = e.touches[0].clientX
+    mousePos.y = e.touches[0].clientY
+    draw(e)
+  })
+
+  canvas.addEventListener('touchend', disableDraw)
 
   loop()
 
