@@ -2,1281 +2,201 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello</title>
+    <title>Title</title>
     <style>
-        * {
+        html, body {
             margin: 0;
-            padding: 0;
-        }
-
-        body {
-            position: relative;
-        }
-
-        .container {
-            width: 970px;
-            margin: 0 auto;
-            padding-top: 70px;
-            transition: all ease 0.3s;
-        }
-
-        h6 {
-            color: #BDBDBD;
-            margin-bottom: 30px
-        }
-
-        h6 a {
-            text-decoration: none;
-            color: #95A4B8;
-        }
-
-        h6 a:hover {
-            color: #6180A8;
-        }
-
-        .bill {
-            background: linear-gradient(to right, #f1cb48 0%, #f9d65c 24%, #f9d65c 48%, #e6bc3b 99%);;
-            width: 140px;
-            height: 290px;
-            border-radius: 70px;
-            float: right;
-            margin-left: 30px;
-            position: relative;
-            transition: all ease 0.3s;
-
-        }
-
-        .bill * {
-            position: absolute;
-            box-sizing: content-box;
-            -moz-box-sizing: content-box;
-        }
-
-        .glasses {
-            background-color: rgba(0, 0, 0, 0);
-            border: #949699 solid 11px;
-            width: 57px;
-            height: 57px;
-            border-radius: 50%;
-            top: 30px;
-            left: 31px;
-            z-index: 99;
-        }
-
-        .eye_animate {
-            width: 57px;
-            height: 0;
-            border-radius: 31%;
-            background-color: #F9D65C;
-            top: 41px;
-            left: 42px;
-            z-index: 9;
-            animation: eyes_animation 1.5s ease 2s infinite;
-        }
-
-        @keyframes eyes_animation {
-            0% {
-                height: 0;
-            }
-            15% {
-                height: 57px;
-            }
-            30% {
-                height: 0;
-            }
-            100% {
-                height: 0;
-            }
-        }
-
-        .white_part * {
-            border-radius: 50%
-        }
-
-        .white_part {
-            width: 57px;
-            border-radius: 50%;
-            height: 48px;
-            background-color: #FFF;
-            top: 44px;
-            left: 42px;
-            box-shadow: 0 0 16px rgba(0, 0, 0, 0.3) inset;
-        }
-
-        .brown_eye {
-            background-color: #a87a51;
-            width: 21px;
-            height: 21px;
-            top: 13px;
-            right: 18px;
-        }
-
-        .black_part {
-            background-color: black;
-            width: 8px;
-            height: 8px;
-            top: 6px;
-            left: 6px;
-        }
-
-        .black_part:after {
-            background-color: #FFF;
-            width: 3px;
-            height: 3px;
-            left: 1px;
-            border-radius: 50%;
-            position: absolute;
-            content: '';
-            filter: blur(1px);
-        }
-
-        .black_part:before {
-            background-color: #FFF;
-            width: 3px;
-            height: 3px;
-            left: 1px;
-            border-radius: 50%;
-            position: absolute;
-            content: '';
-            filter: blur(1px);
-        }
-
-        .black_tie {
-            top: 61px;
-            right: 0;
-        }
-
-        .right_tie {
-            -webkit-transform: rotate(2deg);
-            -o-transform: rotate(2deg);
-            -ms-transform: rotate(2deg);
-            -moz-transform: rotate(2deg);
-            transform: rotate(2deg)
-        }
-
-        .right_tie * {
-            right: -3px;
-        }
-
-        .top_tie {
-            background-color: #3E3E3C;
-            width: 28px;
-            height: 8px;
-            right: -2px;
-            border-top-right-radius: 6px;
-            border-bottom-right-radius: 2px;
-            border: 1px solid #30302E;
-            border-top-left-radius: 3px;
-        }
-
-        .top_tie:after {
-            background-color: #FFF;
-            width: 5px;
-            height: 10px;
-            right: 25px;
-            z-index: 9999;
-            position: absolute;
-            content: '';
-            border-radius: 36%;
-            border: 1px solid #30302E;
-            bottom: -1px;
-        }
-
-        .down_tie {
-            background-color: #3E3E3C;
-            width: 28px;
-            height: 8px;
-            right: -2px;
-            top: 9px;
-            border-top-right-radius: 2px;
-            border-bottom-right-radius: 6px;
-            border: 1px solid #30302E;
-            border-top-left-radius: 2px;
-        }
-
-        .down_tie:after {
-            background-color: #FFF;
-            width: 5px;
-            height: 10px;
-            right: 25px;
-            z-index: 9999;
-            position: absolute;
-            content: '';
-            border-radius: 36%;
-            border: 1px solid #30302E;
-            bottom: -2px;
-        }
-
-        .left_tie {
-            -webkit-transform: scaleX(-1) rotate(2deg);
-            -moz-transform: scaleX(-1) rotate(2deg);
-            -ms-transform: scaleX(-1) rotate(2deg);
-            -o-transform: scaleX(-1) rotate(2deg);
-            transform: scaleX(-1) rotate(2deg);
-            right: 116px;
-        }
-
-        .left_tie * {
-            left: -3px;
-        }
-
-        .clothes .main {
-            background-color: #35668F;
-            width: 80px;
-            height: 67px;
-            top: 193px;
-            left: 29px;
-            z-index: 99999;
-            border-left: 1px dotted #FFF;
-            border-right: 1px dotted #FFF;
-        }
-
-        .clothes .main:before {
-            content: '';
-            position: absolute;
-            background: linear-gradient(to right, #F1CB48 -11%, #F9D65C 24%, #F9D65C 48%, #E6BC3B 109%);
-            width: 110px;
-            border-radius: 50%;
-            height: 57px;
-            left: -14px;
-            top: -49px;
-        }
-
-        .clothes .main:after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            background: radial-gradient(ellipse at top, #35668F 57%, #003E82 120%);
-            border-radius: 50%;
-            height: 30px;
-            left: -10px;
-            top: 73px;
-        }
-
-        .right_shirt {
-            background-color: #35668F;
-            width: 45px;
-            height: 10px;
-            top: 201px;
-            left: 96px;
-            border: 1px dotted #DDD;
-            transform: rotate(-13deg);
-            border-bottom-right-radius: 9px;
-            z-index: 99999;
-        }
-
-        .right_shirt:before {
-            background-color: #000;
-            height: 8px;
-            width: 8px;
-            left: 2px;
-            position: absolute;
-            content: '';
-            border-radius: 50%;
-            top: 1px;
-        }
-
-        .right_shirt:after {
-            background-color: #35668F;
-            height: 2px;
-            width: 2px;
-            left: 5px;
-            position: absolute;
-            content: '';
-            border-radius: 50%;
-            top: 4px;
-        }
-
-        .make_it_left {
-            left: -2px;
-            transform: scaleX(-1) rotate(-13deg);
-        }
-
-        .clothes {
-            z-index: 9999;
-        }
-
-        .clothes .bottom {
-            width: 142px;
-            background: radial-gradient(ellipse at top, #35668F 61%, #003E82 100%);
-            height: 50px;
-            top: 240px;
-            left: -1px;
-            border-bottom-right-radius: 25px;
-            border-bottom-left-radius: 26px;
-        }
-
-        .clothes .bottom:before {
-            content: '';
-            position: absolute;
-            width: 140px;
-            border-radius: 50%;
-            height: 34px;
-            left: 0;
-            top: -19px;
-            background: linear-gradient(to right, #F1CB48 0%, #F9D65C 24%, #F9D65C 48%, #E6BC3B 99%);
-        }
-
-        .smile {
-            background-color: #000;
-            border-radius: 50%;
-            width: 79px;
-            height: 37px;
-            top: 114px;
-            z-index: 99999;
-            right: 31px;
-        }
-
-        .smile:before {
-            position: absolute;
-            content: '';
-            border-radius: 50%;
-            width: 100px;
-            height: 37px;
-            top: -3px;
-            right: -13px;
-            background: linear-gradient(to right, #F1CB48 -40%, #F9D65C 24%, #F9D65C 48%, #E6BC3B 109%);
-        }
-
-        .legs {
-            top: 285px
-        }
-
-        .right_leg {
-            background: #003e82;
-            background: linear-gradient(to bottom, #003e82 0%, #35668f 40%);
-            width: 45px;
-            height: 38px;
-            left: 73px;
-            border-bottom-left-radius: 4px;
-        }
-
-        .right_leg:before {
-            position: absolute;
-            content: '';
-            border-radius: 50%;
-            width: 40px;
-            height: 73px;
-            left: 28px;
-            background-color: #FFF;
-            top: 5px;
-        }
-
-        .make_it_left_leg {
-            left: 23px;
-            -webkit-transform: scaleX(-1);
-        }
-
-        .shoes {
-            background-color: #231F20;
-            width: 45px;
-            height: 9px;
-            top: 36px;
-            left: 74px;
-            border-top-right-radius: 14px;
-            transform: rotate(2deg);
-        }
-
-        .shoes:after {
-            position: absolute;
-            content: '';
-            border-top-right-radius: 30%;
-            width: 30px;
-            height: 6px;
-            background-color: #231F20;
-            top: 8px;
-            right: 0;
-            border-bottom-right-radius: 31%;
-            border-bottom-left-radius: 50%;
-            transform: rotate(2deg);
-        }
-
-        .shoes:before {
-            position: absolute;
-            content: '';
-            width: 9px;
-            height: 6px;
-            background-color: #231F20;
-            top: 6px;
-            left: 0;
-            border-bottom-right-radius: 40%;
-        }
-
-        .small_shoes {
-            border-radius: 40%;
-            width: 30px;
-            height: 10px;
-            background-color: #231F20;
-            top: -4px;
-            right: 4px;
-            transform: rotate(9deg);
-        }
-
-        .small_shoes:before {
-            position: absolute;
-            content: '';
-            width: 18px;
-            height: 6px;
-            background-color: #35668F;
-            top: -1px;
-            left: -1px;
-            transform: rotate(-12deg) !important;
-            border-bottom-right-radius: 4px;
-        }
-
-        .make_it_left_shoes {
-            left: 22px;
-            transform: scaleX(-1)
-        }
-
-        .arm {
-            width: 77px;
-            height: 89px;
-            background: #f1cb48;
-            background: linear-gradient(135deg, #F1CB48 0%, #F9D65C 24%, #E6BC3B 99%);
-            top: 192px;
-            border-bottom-left-radius: 11px;
-            border-top-left-radius: 55px;
-            z-index: 5555;
-            transform: rotate(27deg);
-            left: -12px;
-        }
-
-        .arm:before {
-            position: absolute;
-            content: '';
-            width: 36px;
-            height: 19px;
-            background-color: #F3CF55;
-            top: 76px;
-            left: -7px;
-            transform: rotate(69deg);
-            border-bottom-left-radius: 19px;
-            border-bottom-right-radius: 9px;
-        }
-
-        .arm:after {
-            position: absolute;
-            content: '';
-            width: 52px;
-            height: 16px;
-            background-color: #FFF;
-            top: 73px;
-            left: 0;
-            transform: rotate(72deg);
-            border-radius: 50%;
-        }
-
-        .hand {
-            width: 19px;
-            height: 11px;
-            background-color: #231F20;
-            left: -28px;
-            top: 270px;
-            z-index: 99999;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-
-            transform: rotate(4deg);
-        }
-
-        .hand:before {
-            width: 27px;
-            position: absolute;
-            content: '';
-            height: 25px;
-            background-color: #231F20;
-            left: 4px;
-            top: 4px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 0;
-            border-top-left-radius: 3px;
-            border-top-right-radius: 18px;
-
-            transform: rotate(-17deg);
-        }
-
-        .hand:after {
-            width: 14px;
-            position: absolute;
-            content: '';
-            height: 14px;
-            background-color: #231F20;
-            left: 7px;
-            top: 21px;
-            border-radius: 50%;
-        }
-
-        .hand_parts {
-            width: 16px;
-            height: 16px;
-            background-color: #231F20;
-            left: 19px;
-            top: 21px;
-            border-radius: 47%;
-        }
-
-        .hand_parts:after {
-            position: absolute;
-            content: '';
-            width: 16px;
-            height: 16px;
-            background-color: #231F20;
-            left: 1px;
-            top: -11px;
-            border-radius: 47%;
-        }
-
-        .make_it_right_arm {
-            left: 57px;
-
-            transform: scaleX(-1);
-            top: 186px;
-            height: 92px;
-            z-index: -1;
-            border-left: 14px #E6BC3B solid;
-        }
-
-        .make_it_right_hand {
-            left: 137px;
-            top: 266px;
-            z-index: 7777;
-            transform: scaleX(-1) rotate(27deg);
-        }
-
-        .hair1 {
-            background-color: rgba(0, 0, 0, 0);
-            width: 25px;
-            height: 48px;
-            top: -37px;
-            border-radius: 53%;
-            border-bottom-left-radius: 3px;
-            border-left: solid #000 1px;
-            left: 75px;
-            transform: rotate(8deg);
-        }
-
-        .hair1:after {
-            background-color: rgba(0, 0, 0, 0);
-            position: absolute;
-            content: '';
-            width: 25px;
-            height: 35px;
-            top: 14px;
-            border-radius: 43%;
-            border-bottom-left-radius: 1px;
-            border-left: solid #000 1px;
-            left: 1px;
-
-            transform: rotate(4deg);
-        }
-
-        .hair1:before {
-            background-color: rgba(0, 0, 0, 0);
-            position: absolute;
-            content: '';
-            width: 25px;
-            height: 29px;
-            top: 21px;
-            border-radius: 43%;
-            border-bottom-left-radius: 1px;
-            border-left: solid #000 1px;
-            left: 3px;
-            transform: rotate(11deg);
-        }
-
-        .make_it_left_hair1 {
-            left: 44px;
-            transform: scaleX(-1) rotate(13deg);
-        }
-
-        .hair2 {
-            background-color: rgba(0, 0, 0, 0);
-            width: 25px;
-            height: 48px;
-            top: -43px;
-            border-radius: 43%;
-            border-bottom-left-radius: 3px;
-            border-left: solid #000 1px;
-            left: 73px;
-            transform: rotate(5deg);
-        }
-
-        .hair2:before {
-            background-color: rgba(0, 0, 0, 0);
-            width: 25px;
-            position: absolute;
-            content: '';
-            height: 48px;
-            border-radius: 43%;
-            border-bottom-left-radius: 3px;
-            border-left: solid #000 1px;
-            left: -29px;
-            transform: scaleX(-1) rotate(15deg);
-        }
-
-        .blue_borders {
-            background-color: #35668F;
-            width: 89px;
-            height: 79px;
-            top: 180px;
-            left: 26px;
-            z-index: 2;
-        }
-
-        .blue_borders:before {
-            position: absolute;
-            content: '';
-            background-color: #35668F;
-            width: 91px;
-            height: 17px;
-            border-bottom-right-radius: 9px;
-            transform: rotate(-13deg);
-            top: 24px;
-            left: 25px;
-        }
-
-        .blue_borders:after {
-            position: absolute;
-            content: '';
-            background-color: #35668F;
-            width: 91px;
-            height: 17px;
-            border-bottom-left-radius: 9px;
-            transform: rotate(13deg);
-            top: 24px;
-            left: -27px;
-        }
-
-        .white_light {
-            width: 5px;
-            height: 43px;
-            left: 35px;
-            background-color: #FFFFFF;
-            opacity: 0.2;
-            top: 2px;
-            border-radius: 50%;
-            box-shadow: 0 3px 10px 8px #FFFFFF;
-            transform: rotate(49deg);
-        }
-
-        .dark_light {
-            width: 7px;
-            height: 50px;
-            top: 10px;
-            left: 105px;
-            background-color: #cd9f08;
-            opacity: 0.2;
-            border-radius: 50%;
-            box-shadow: 0 3px 10px 8px #cd9f08;
-            transform: rotate(-42deg);
-        }
-
-        .pocket {
-            width: 40px;
-            height: 37px;
-            background-color: #245580;
-            top: 215px;
-            z-index: 99999;
-            left: 49px;
-            -moz-box-shadow: 0 03px 0 rgba(19, 54, 82, 1);
-            box-shadow: 0 0 3px 0 #133652;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            border: 1px dotted #B6B6B6;
-        }
-
-        .pocket:after {
-            width: 43px;
-            height: 15px;
-            position: absolute;
-            content: '';
-            top: -9px;
-            left: -1px;
-            border-radius: 50%;
-            background-color: #35668F;
-            border-bottom: 1px dotted #B6B6B6;
-        }
-
-        .logo {
-            background-color: #231F20;
-            width: 19px;
-            height: 19px;
-            border-radius: 50%;
-            top: 11px;
-            right: 10px;
-        }
-
-        .logo:before {
-            position: absolute;
-            content: '';
-            background-color: #245580;
-            width: 9px;
-            height: 9px;
-            top: 5px;
-            left: 5px;
-            transform: rotate(-45deg);
-        }
-
-        .logo:after {
-            position: absolute;
-            content: '';
-            background-color: #231F20;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            top: 7px;
-            left: 7px;
-        }
-
-        .lines {
-            width: 5px;
-            height: 1px;
-            z-index: 9999;
-            background-color: #231F20;
-            top: 20px;
-            right: 12px;
-        }
-
-        .lines:after {
-            position: absolute;
-            content: '';
-            width: 11px;
-            height: 1px;
-            z-index: 9999;
-            background-color: #245580;
-            top: 1px;
-            right: -4px;
-        }
-
-        .curve1 {
-            width: 40px;
-            height: 29px;
-            background-color: rgba(0, 0, 0, 0);
-            top: 249px;
-            z-index: 99999;
-            left: 110px;
-            border-bottom-left-radius: 20px;
-            border-left: dotted 1px #FFF;
-            box-shadow: 1px 0 0 0 #133652 inset;
-        }
-
-        .curve1:after {
-            position: absolute;
-            content: '';
-            width: 32px;
-            top: -44px;
-            height: 50px;
-            border-bottom-right-radius: 20px;
-            border-bottom-left-radius: 5px;
-            border-bottom: dotted 1px #FFF;
-            background-color: rgba(0, 0, 0, 0);
-        }
-
-        .make_it_left_curve {
-            left: -11px;
-
-            transform: scaleX(-1);
-        }
-
-        .curve2 {
-            width: 91px;
-            height: 29px;
-            background-color: rgba(0, 0, 0, 0);
-            top: 175px;
-            z-index: 100000;
-            left: 25px;
-            border-bottom-left-radius: 50%;
-            border-bottom-right-radius: 50%;
-            border-bottom: dotted 1px #FFF;
-        }
-
-        .bill h2 {
-            top: 364px;
-            font-size: 34px;
-            font-weight: normal;
-            left: 43px;
-            color: #414141;
-        }
-
-        @keyframes hand_animate {
-            0% {
-                transform: rotate(40deg);
-            }
-            50% {
-                transform: rotate(70deg);
-            }
-            100% {
-                transform: rotate(40deg);
-            }
-        }
-
-        .wrapper {
-            margin: 20px 0 0 50px;
-        }
-
-        canvas {
-            position: absolute;
-            margin-left: 30%;
-            margin-top: 8%;
-        }
-        .card {
-            position: relative;
-            top: 10%;
-            left: 20%;
-            transform: translate(-80%, -10%);
-            width: 300px;
-            height: 450px;
-            background: #ff4b1f;
-        }
-
-        .live-status {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 20px;
-            height: 20px;
-            border: 2px solid white;
-            border-radius: 50%;
-            background: #66ff00;
-            cursor: pointer;
-            z-index: 2;
-            box-sizing: border-box;
-            animation: glow 1s ease-in infinite;
-        }
-
-        .photo {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            background: url("yitachi.png");
-        }
-
-        .photo span {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(0, 0, 0, .6);
-            color: #ffffff;
-            font-size: 4rem;
-            line-height: 300px;
-            text-align: center;
-            box-sizing: border-box;
-            opacity: 0;
-            cursor: pointer;
-            transition: opacity .2s ease-in;
-        }
-
-        .photo:hover > span {
-            opacity: 1;
-        }
-
-        .bot-wrap button {
-            position: relative;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-weight: bold;
-            color: #fff;
-            text-transform: uppercase;
-            background: linear-gradient(135deg, #f46b45, #eea849);
-            padding: .5rem 2rem;
-            border: 2px solid #ffffff;
-            border-radius: 20px;
-            cursor: pointer;
-            overflow: hidden;
-        }
-
-        .bot-wrap button:hover:before {
-            left: 110%;
-            transition: .3s;
-        }
-
-        .bot-wrap button:before {
-            content: '';
-            background: rgba(255, 255, 255, .3);
-            height: 100%;
-            width: 65px;
-            position: absolute;
-            top: 0;
-            left: -100%;
-            transform: skew(-45deg);
-            transition: 0s;
-        }
-
-        .bot-wrap .stats {
-            color: #fff;
-            clear: both;
-        }
-
-        .bot-wrap .stats .stats-wrap {
-            position: relative;
-            float: left;
-            width: 33.3333%;
-            text-align: center;
-            text-transform: uppercase;
-            box-sizing: border-box;
-            cursor: pointer;
-            transition: background 0.2s ease-in;
-        }
-
-        .bot-wrap .stats .stats-wrap:hover {
-            background: rgba(0, 0, 0, 0.1);
-        }
-
-        .bot-wrap .stats .stats-wrap:nth-child(2) {
-            border-left: solid 1px white;
-            border-right: solid 1px white;
-        }
-
-        .bot-wrap .stats .stats-wrap .total {
-            position: relative;
-            font-size: 2rem;
-            margin-top: 1rem;
-        }
-
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 4px 1px #66ff00;
-            }
-            50% {
-                box-shadow: 0 0 4px 1px rgba(102, 255, 0, 0);
-            }
-            100% {
-                box-shadow: 0 0 4px 1px #66ff00;
-            }
         }
     </style>
 </head>
 <body>
-<canvas></canvas>
-<div class="wrapper">
-    <h3>Hi there! I am</h3>
-
-    <h1>Wang cong yi----程序没有BUG 有BUG的是写程序的人.......</h1>
-    <span class="text"></span>
-    <span class="cursor">|</span>
-</div>
-<div class="container">
-    <div class="bill">
-        <div class="lights">
-            <span class="white_light"></span>
-            <span class="dark_light"></span>
-        </div>
-        <div class="hair">
-            <span class="hair1"></span>
-            <span class="hair1 make_it_left_hair1"></span>
-            <span class="hair2"></span>
-        </div>
-        <div class="eyes">
-            <div class="eye_animate"></div>
-
-            <div class="glasses"></div>
-            <div class="white_part">
-                <div class="brown_eye">
-                    <span class="black_part"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="black_tie">
-					<span class="right_tie">
-						<div class="top_tie"></div>
-						<div class="down_tie"></div>
-					</span>
-					<span class="left_tie">
-						<div class="top_tie"></div>
-						<div class="down_tie"></div>
-					</span>
-        </div>
-
-        <div class="smile"></div>
-
-        <div class="arm"></div>
-        <div class="hand"><span class="hand_parts"></span></div>
-
-        <div class="arm make_it_right_arm"></div>
-        <div class="hand make_it_right_hand"><span class="hand_parts"></span></div>
-
-        <div class="curves">
-            <span class="curve1"></span>
-            <span class="curve1 make_it_left_curve"></span>
-            <span class="curve2"></span>
-        </div>
-
-        <div class="clothes">
-            <div class="main"></div>
-            <div class="blue_borders"></div>
-            <div class="right_shirt"></div>
-            <div class="right_shirt make_it_left"></div>
-            <div class="bottom"></div>
-        </div>
-
-        <div class="pocket">
-            <div class="logo"></div>
-            <span class="lines"></span>
-        </div>
-
-        <div class="legs">
-            <div class="right_leg"></div>
-            <div class="right_leg make_it_left_leg"></div>
-            <div class="shoes"><span class="small_shoes"></span></div>
-            <div class="shoes make_it_left_shoes"><span class="small_shoes"></span></div>
-        </div>
-    </div>
-</div>
-<div class="card">
-    <div class="live-status"></div>
-    <div class="photo">
-        <span>Wang</span>
-    </div>
-    <div class="bot-wrap">
-        <button>Hello</button>
-        <div class="stats">
-            <div class="stats-wrap">
-                <h2>First</h2>
-
-                <div id="number1" class="total">47</div>
-            </div>
-            <div class="stats-wrap">
-                <h2>Second</h2>
-
-                <div id="number2" class="total">36</div>
-            </div>
-            <div class="stats-wrap">
-                <h2>Third</h2>
-
-                <div id="number3" class="total">16</div>
-            </div>
-        </div>
-    </div>
-</div>
 <script>
-    var message = {
-        message: [
-            '我喜欢前端技术~~，并且相信自己会一直走下去',
-            '因为不太喜欢一成不变的东西，前端正好满足我的求知欲和兴趣爱好',
-            '因为之前在华为外包工作，所以有关工作作品无法拿出来（华为的信息安全做的很好~~）',
-            'so~~github个人博客只是因为要找工作所以才随便写了些，所有的css和js，我都放在HTML里了，请不要吐槽~~，也方便你用F12查看',
-            '其实真的不知道简历应该怎么写，所以更具体的东西，面试的时候再详谈吧'
-        ],
-        counterS: 0,
-        counterL: 0,
-        deleteS: false,
+  var w = window.innerWidth
+  var h = window.innerHeight
 
-        init: function () {
-            this.cacheElem();
-            this.type();
-        },
-        cacheElem: function () {
-            this.text = document.querySelector('.text');
-        },
-        type: function () {
-            var message = this.message[this.counterS],
-                    self = this,
-                    speed = 0;
-            message = !this.deleteS ? message.slice(0, ++this.counterL) : message.slice(0, --this.counterL);
-            if (this.message[this.counterS] != message && !this.deleteS) {
-                this.text.textContent = message;
-                speed = 90;
-            } else {
-                this.deleteS = true;
-                speed = this.message[this.counterS] == message ? 1000 : 40;
-                this.text.textContent = message;
-                if (message == '') {
-                    this.deleteS = false;
-                    this.counterS = this.counterS < this.message.length - 1 ? this.counterS + 1 : 0;
-                }
-            }
-            setTimeout(function () {
-                self.type();
-            }, speed)
-        }
-    };
-    message.init();
+  var canvas = document.createElement('canvas')
+  document.body.appendChild(canvas)
 
+  canvas.width = w
+  canvas.height = h
 
-    var canvas = document.querySelector("canvas"),
-            ctx = canvas.getContext("2d");
+  var ctx = canvas.getContext('2d')
 
-    var w = canvas.width = 400,
-            h = canvas.height = 400,
-            centerX = 0,
-            centerY = 0;
-    var timer = 0,
-            radius = 150,
-            nbLetters = 12;
+  ctx.fillStyle = '#000000'
+  ctx.fillRect(0, 0, w, h)
 
-    var numParts = 275,
-            tabParts = [];
+  ctx.globalCompositeOperation = 'lighter'
 
+  var randomNumbers = length => Array.from(new Array(length), () => Math.random())
+  var TAU = Math.PI * 2
 
-    function catchSymbol(rawValue) {
-        var letter = {Model: "N", Color: "#fff"};
-        switch (rawValue) { // ♈ ♓ ♒ ♑ ♐ ♏ ♎ ♍ ♌ ♋ ♊ ♉
-            case 0:
-                letter.Model = "♈";
-                letter.Color = "#cf5";
-                break;
-            case 1:
-                letter.Model = "♉";
-                letter.Color = "#bf6";
-                break;
-            case 2:
-                letter.Model = "♊";
-                letter.Color = "#af7";
-                break;
-            case 3:
-                letter.Model = "♋";
-                letter.Color = "#9f8";
-                break;
-            case 4:
-                letter.Model = "♌";
-                letter.Color = "#8f9";
-                break;
-            case 5:
-                letter.Model = "♍";
-                letter.Color = "#7fa";
-                break;
-            case 6:
-                letter.Model = "♏";
-                letter.Color = "#6fb";
-                break;
-            case 7:
-                letter.Model = "♍";
-                letter.Color = "#5fc";
-                break;
-            case 8:
-                letter.Model = "♐";
-                letter.Color = "#4fd";
-                break;
-            case 9:
-                letter.Model = "♑";
-                letter.Color = "#3fe";
-                break;
-            case 10:
-                letter.Model = "♒";
-                letter.Color = "#2ff";
-                break;
-            case 11:
-                letter.Model = "♓";
-                letter.Color = "#2ff";
-                break;
-        }
-        return letter;
+  var createSmokeParticle = () => {
+
+    var canvas = document.createElement('canvas')
+
+    var w = 100
+    var h = 100
+    var cx = w * 0.5
+    var cy = h * 0.5
+
+    canvas.width = w
+    canvas.height = h
+    var ctx = canvas.getContext('2d')
+    canvas.ctx = ctx
+
+    var xRand = -5 + (Math.random() * 10)
+    var yRand = -5 + (Math.random() * 10)
+    var xRand2 = 10 + (Math.random() * (cx / 2))
+    var yRand2 = 10 + (Math.random() * (cy / 2))
+
+    var color = {
+      r: Math.round(150 + (Math.random() * 100)),
+      g: Math.round(50 + (Math.random() * 100)),
+      b: Math.round(50 + (Math.random() * 100)),
     }
 
-    function Particles() {
-        this.x = 0;
-        this.y = 0;
-        this.r = Math.random() * radius;
-        this.v = Math.random();
-        this.color = "rgba(155,250,250," + Math.random() + ")";
+    ctx.fillStyle = `rgba(${color.r},${color.g},${color.b},.15)`
+
+    Array
+      .from(new Array(200), () => randomNumbers(3))
+      .forEach((p, i, arr) => {
+        var length = arr.length
+
+        var x = Math.cos(TAU / xRand / length * i) * p[2] * xRand2 + cx
+        var y = Math.sin(TAU / yRand / length * i) * p[2] * yRand2 + cy
+
+
+        ctx.beginPath()
+        ctx.moveTo(x, y)
+        ctx.arc(x, y, p[2] * 4, 0, TAU)
+        ctx.fill()
+
+      })
+
+    return canvas
+  }
+
+  var Particle = function() {
+    var p = this
+    p.osc1 = {
+      osc: 0,
+      val: 0,
+      freq: Math.random(),
     }
-
-    for (var i = 0; i < numParts; i++) {
-        tabParts.push(new Particles());
+    p.osc2 = {
+      osc: 0,
+      val: 0,
+      freq: Math.random(),
     }
-
-    var grd = ctx.createRadialGradient(w / 2, h / 2, 500, w / 2, h / 2, 150);
-    grd.addColorStop(0, "#000");
-    grd.addColorStop(1, "#024"); // # 246
-
-    function draw() {
-        ctx.save();
-        ctx.fillStyle = grd;
-        ctx.fillRect(0, 0, w, h);
-
-
-        ctx.beginPath();
-        ctx.fillStyle = grd;
-        ctx.fillRect(210, 210, 230, 230);
-        ctx.closePath();
-
-        for (var i = 0; i < nbLetters; i++) {
-            ctx.beginPath();
-            ctx.closePath();
-            ctx.font = "9px Arial";
-            ctx.fillStyle = catchSymbol(i).Color;
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
-            ctx.fillText(catchSymbol(i).Model,
-                    w / 2 + Math.cos(i * (Math.PI * 2) / nbLetters + timer) * (radius - 45),
-                    h / 2 + Math.sin(i * (Math.PI * 2) / nbLetters + timer) * (radius - 45)
-            );
-            ctx.closePath();
-
-            ctx.beginPath();
-            ctx.strokeStyle = catchSymbol(i).Color;
-
-            ctx.moveTo(w / 2 + Math.cos(i * (Math.PI * 2) / nbLetters + timer) * (radius),
-                    w / 2 + Math.sin(i * (Math.PI * 2) / nbLetters + timer) * (radius));
-            ctx.lineTo(w / 2 + Math.cos(i * (Math.PI * 2) / nbLetters + timer) * (radius + 200),
-                    h / 2 + Math.sin(i * (Math.PI * 2) / nbLetters + timer) * (radius + 200));
-            ctx.lineWidth = 0.025;
-            ctx.stroke();
-            ctx.closePath();
-        }
-
-
-        for (var i = 0; i < numParts; i++) {
-            ctx.beginPath();
-            ctx.globalCompositeOperation = "source-over";
-            ctx.fillStyle = tabParts[i].color;
-            ctx.arc(
-                    w / 2 + Math.cos(i + timer + tabParts[i].v) * (tabParts[i].r * (1.9)),
-                    h / 2 + Math.sin(i + timer) * (tabParts[i].r + tabParts[i].v),
-                    tabParts[i].v, 0, 2 * Math.PI, true);
-            ctx.fill();
-            ctx.closePath();
-            ctx.beginPath();
-            ctx.globalCompositeOperation = "saturation";
-            ctx.fillStyle = "rgba(155,150,250,0.2)";
-            ctx.arc(
-                    w / 2 + Math.cos(i + timer + tabParts[i].v) * (tabParts[i].r * (1.9)),
-                    h / 2 + Math.sin(i + timer) * (tabParts[i].r + tabParts[i].v),
-                    tabParts[i].v * 15, 0, 2 * Math.PI, true);
-            ctx.fill();
-            ctx.closePath();
-        }
-
-        timer += 1 / 100;
-        ctx.restore();
+    p.counter = 0
+    p.x = mousePos.x
+    p.y = mousePos.y
+    p.size = Math.random() * 100
+    p.growth = Math.random() / 20
+    p.life = Math.random()
+    p.opacity = Math.random() / 5
+    p.speed = {
+      x: Math.random(),
+      y: Math.random(),
     }
+    p.texture = createSmokeParticle()
+    p.rotationOsc = Math.round(Math.random()) ? 'osc1' : 'osc2'
+  }
 
-    (function loop() {
-        draw();
-        requestAnimationFrame(loop);
-    })();
-</script>
-<script src="jquery-2.2.1.min.js"></script>
-<script>
-    $.fn.counter = function (ops) {
-        var settings = $.extend({
-            start: 0,
-            end: 100,
-            easing: 'swing',
-            duration: 400,
-            complete: ''
-        }, ops);
-        var $this =$(this);
-        $({count:settings.start}).animate({count:settings.end},{
-            duration:settings.duration,
-            easing:settings.easing,
-            step:function(){
-                var m = Math.ceil(this.count);
-                $this.text(m)
-            },
-            complete:settings.complete
-        })
-    };
+  var particles = []
 
-    $('#number1').counter({end: 100,duration: 3000});
-    $('#number2').counter({end: 1000,duration: 3000});
-    $('#number3').counter({end: 10000,duration: 3000});
+  var update = () => {
+
+    particles.forEach((p, i) => {
+
+      p.x = mousePos.x
+      p.y = mousePos.y
+      p.size = (Math.sqrt(Math.pow(p.x - p.ox, 2) + Math.pow(p.y - p.oy, 2))) * 5
+      p.counter += 0.01
+      p.growth = Math.sin(p.life)
+      p.life -= 0.001
+      p.osc1.osc = Math.sin(p.osc1.val += p.osc1.freq)
+      p.osc2.osc = Math.cos(p.osc2.val += p.osc2.freq)
+      p.ox = p.x
+      p.oy = p.y
+
+    })
+  }
+
+  var render = () => {
+
+    particles.forEach(p => {
+      ctx.save()
+
+      ctx.globalAlpha = p.opacity / (p.size / 50)
+      ctx.translate(p.x, p.y)
+      ctx.rotate(Math.random() * TAU)
+      ctx.drawImage(p.texture, 0 - (p.size / 2), 0 - (p.size / 2), p.size, p.size)
+
+      ctx.globalAlpha = 1
+      ctx.beginPath()
+      ctx.fillStyle = `rgba(${
+      155 + Math.round(Math.random() * 100)
+        },${
+      155 + Math.round(Math.random() * 100)
+        },${
+      155 + Math.round(Math.random() * 100)
+        },${
+        Math.random()
+        })`
+      ctx.arc(Math.random() * p.size, Math.random() * p.size, Math.random(), 0, TAU)
+      ctx.fill()
+
+      ctx.restore()
+
+    })
+
+  }
+
+  var loop = () => {
+    update()
+    render()
+    window.requestAnimationFrame(loop)
+  }
+
+  var mousePos = {
+    x: 0,
+    y: 0,
+  }
+
+  var drawingMode = false
+  var activateDraw = e => {
+    drawingMode = true
+    particles = Array.from(new Array(10), () => new Particle())
+    draw(e)
+  }
+  var disableDraw = e => {
+    drawingMode = false
+    particles = []
+  }
+  var draw = e => {
+    console.log(drawingMode)
+    if (!drawingMode) return
+    console.log(e)
+    particles.forEach(p => {
+    })
+
+  }
+
+  canvas.addEventListener('mousedown', activateDraw)
+  canvas.addEventListener('mousemove', e => {
+    mousePos.x = e.layerX
+    mousePos.y = e.layerY
+    draw(e)
+  })
+  canvas.addEventListener('mouseup', disableDraw)
+
+  canvas.addEventListener('touchstart', e => activateDraw)
+  canvas.addEventListener('touchmove', e => draw)
+  canvas.addEventListener('touchend', e => disableDraw)
+
+  loop()
+
 </script>
 </body>
 </html>
-
-
-
